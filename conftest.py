@@ -1,6 +1,7 @@
 # this is the 'setup' file for all the other test in this
 # and subdirectories!
 import pytest
+from out import wrap
 
 print('hello world?')
 
