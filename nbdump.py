@@ -1,6 +1,7 @@
-import json
-
 def nbdump(infile, outfile):
+
+    import json
+
     j = json.JSONDecoder()
     # line counter
     lc = 0
@@ -8,7 +9,7 @@ def nbdump(infile, outfile):
     try:
         with open(infile) as f:
             data = f.read()
-            nb = js.decode(data)
+            nb = j.decode(data)
 
         o = open(outfile,'w+')
         for cell in nb['cells']:
@@ -17,10 +18,8 @@ def nbdump(infile, outfile):
                     o.write(line)
                     lc += 1
                 o.write('\n')
+        o.close()
         print(f'Sucksessfully wrote {lc} lines to {outfile}')
                 
     except Exception as e:
         print(e)
-        
-    finally:
-        o.close()
