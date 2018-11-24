@@ -12,16 +12,15 @@ def test_zero_division():
 
 def test_myfunc():
     with pytest.raises(NameError):
-        from out import *
-        #from out import wrap
+        from out import wrap
         wrap()
 
-#def test_myfunc_fail():
-#    try:
-#        from out import wrap
-#        wrap()
-#    except Exception as e:
-#        pytest.fail(f'Unexpected MyError: {e}')
+def test_myfunc_fail():
+    try:
+        from out import wrap
+        wrap()
+    except Exception as e:
+        pytest.fail(f'Unexpected GregError: {e}')
 
 #    try:
 #        from out import *
