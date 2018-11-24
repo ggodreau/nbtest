@@ -20,7 +20,7 @@ def test_myfunc_fail():
         from out import wrap
         wrap()
     except Exception as e:
-        pytest.fail(f'Unexpected GregError: {e}')
+        pytest.fail('Unexpected GregError: {0}'.format(e))
 
 #    try:
 #        from out import *
